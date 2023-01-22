@@ -1,8 +1,7 @@
+const lib = require('./lib');
+
 // Ex: node fz.js 20
 let x = parseInt(process.argv[2])
-
-// Range fordi det er nemt
-let range = r => [...Array(r).keys()]
 
 // Kevlin Henney fizz buzz nu med 0 check
 let fz = (n) => {
@@ -15,5 +14,5 @@ let fz = (n) => {
 
 	return fizz(buzz(x => x))(n.toString())}
 
-range(x).forEach(x => console.log(fz(x)))
+lib.range(x).forEach(x => console.log(fz(x)))
 
