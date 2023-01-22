@@ -17,7 +17,16 @@ const sliding_window_map = (arr, size, fn) => {
     })
 }
 
+// recursive
+const sliding_window_rec = (arr, size, fn) => {
+    if (arr.length < size) return
+    else fn(arr.slice(0, size))
+    sliding_window_rec(arr.slice(1), size, fn)
+}
 
-sliding_window_loop(lib.range(11), 3, console.log)
+// Try it out
+sliding_window_loop(lib.range(10), 3, console.log)
 console.log("---")
-sliding_window_map(lib.range(11), 3, console.log)
+sliding_window_map(lib.range(10), 3, console.log)
+console.log("---")
+sliding_window_rec(lib.range(10), 3, console.log)
